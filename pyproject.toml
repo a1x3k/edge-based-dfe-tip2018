@@ -1,0 +1,31 @@
+[project]
+name = "edge-based-dfe"
+version = "1.0.0"
+description = "Edge-Based Defocus Blur Estimation with Adaptive Scale Selection (Karaali & Jung, TIP 2018)"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Ali Karaali", email = "alixkaraali@gmail.com" }]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "scikit-image>=0.20",
+    "pillow>=9.0",
+]
+
+[project.optional-dependencies]
+demo = ["matplotlib>=3.7"]
+
+[dependency-groups]
+dev = ["pytest>=8.0"]
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/edge_based_dfe"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
